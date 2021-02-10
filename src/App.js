@@ -7,7 +7,15 @@ import { Checkmark } from 'react-checkmark'
 import './App.css';
 import { customerData } from './data';
 import { options } from './data';
-import { Box } from 'rebass';
+import {
+  Box,
+  Card,
+  Image,
+  Heading,
+  Text,
+  Flex
+} from 'rebass';
+
 
 
 
@@ -26,9 +34,16 @@ function App() {
   return (
     <>
     <div className="App">
+      <Flex>
+    <Box   p={3}
+  fontSize={3}
+  width={[ 1, 1, 1/2 ]}
+  color='Green'
+  bg='secondary'
+  >
      <h1 font-size="12px" align="left">Welcome to the Bank</h1>
-     <Box width={500} >
-      <Select
+    
+      <Select border-color="green"
       onChange={(selectedOption)=> setSelectedOption({selectedOption})} 
       options={options}
       styles={styles}
@@ -37,7 +52,7 @@ function App() {
        />
        
        </Box>
-      
+       </Flex>
        
                 
       

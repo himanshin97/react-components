@@ -1,7 +1,7 @@
-import image from './green-tick.png';
+
 
 export const options = [
-    { value: 'gs kumar', label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src={image} height="25px" width="25px"/> </div>},
+    { value: 'gs kumar', label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar </div>},
     { value: 'pk shrivastava', label: <div>22-22-22   222222222  <br/>Current Account - PK Shrivastava </div> },
     { value: 'divya nigam', label: <div>33-33-33   333333333  <br/>Current Account - Divya Nigam </div> },
     { value: 'yash bhagtnagar', label: <div>44-44-44   444444444  <br/>Savings Account - Yash Bhagtnagar </div> },

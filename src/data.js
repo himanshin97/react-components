@@ -1,11 +1,11 @@
 import image from './green-tick.png';
 
 export const options = [
-    { value: 'gs kumar', label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar &nbsp; <img src={image} height="50px" width="30px"/> </div>},
-    { value: 'pk shrivastava', label: "22-22-22   222222222  \nCurrent Account - PK Shrivastava  " },
-    { value: 'divya nigam', label: "33-33-33   333333333  \nCurrent Account - Divya Nigam " },
-    { value: 'yash bhagtnagar', label: <div>44-44-44   444444444  <br/>Savings Account - Yash Bhagtnagar  &nbsp; <img src={image} height="50px" width="30px"/> </div> },
-    { value: 'purva jain', label: <div>55-55-55   555555555   <br/> Account - Purva Jain &nbsp; <img src={image} height="50px" width="30px"/> </div> }
+    { value: 'gs kumar', label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src={image} height="25px" width="25px"/> </div>},
+    { value: 'pk shrivastava', label: <div>22-22-22   222222222  <br/>Current Account - PK Shrivastava </div> },
+    { value: 'divya nigam', label: <div>33-33-33   333333333  <br/>Current Account - Divya Nigam </div> },
+    { value: 'yash bhagtnagar', label: <div>44-44-44   444444444  <br/>Savings Account - Yash Bhagtnagar </div> },
+    { value: 'purva jain', label: <div>55-55-55   555555555   <br/> Account - Purva Jain </div> }
   ];
 
 export const customerData = [

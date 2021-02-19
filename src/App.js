@@ -69,9 +69,9 @@ function App() {
      <h1 fontSize="12px" align="left">Welcome to the Bank</h1>
      <Select border-color="green"
         options={options}
+        defaultValue={{label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src={image} height="45px" width="45px"/> </div>}}
         onChange={handleChange}
-        classNamePrefix="lp-copy-sel"
-        placeholder="Select Customer" 
+        classNamePrefix="lp-copy-sel" 
         isSearchable 
         isClearable
         styles={customStyles}

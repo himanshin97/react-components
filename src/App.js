@@ -16,7 +16,7 @@ import {
 
 function App() {
 
-  const [selectedOption,setSelectedOption] = useState(customerData[0].value);
+  const [selectedOption,setSelectedOption] = useState(null);
   console.log(selectedOption);
 
   const options = customerData.map((customer) => {
@@ -52,7 +52,7 @@ function App() {
 
   const CustomOption = (props) => {
     return props.isSelected ? (
-      <div {...props}>
+      <div >
         
         {/*<components.SingleValue {...props}>{`${props.data.label}`}</components.SingleValue>*/}
         <label>&nbsp;&nbsp;&nbsp;{`${props.data.label1}`} <br/>&nbsp;&nbsp;&nbsp;{`${props.data.label2}`}</label>

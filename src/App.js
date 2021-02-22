@@ -3,7 +3,6 @@ import image from './green-tick.png';
 import { useState } from 'react';
 import Select, { components } from 'react-select';
 import styled from 'styled-components';
-import './App.css';
 import { customerData } from './data';
 import {
   Box,
@@ -22,9 +21,9 @@ function App() {
   const options = customerData.map((customer) => {
     return {
       value: customer,
-      label: `${customer.sortCode} ${customer.accountNumber} ${customer.accountType} ${customer.accountName}`,
-      label1: `${customer.sortCode} ${customer.accountNumber}`,
-      label2: `${customer.accountType} ${customer.accountName}`,
+      value1: `${customer.sortCode} ${customer.accountNumber}`,
+      value2: `${customer.accountType} ${customer.accountName}`,
+      label: `${customer.sortCode} ${customer.accountNumber} ${customer.accountType} ${customer.accountName}`
     };
   }
 
@@ -33,35 +32,56 @@ function App() {
   const handleChange = (selectedOption) => {
     setSelectedOption({selectedOption});
     
+  
+
   }
 
 
-  const customStyles={
-    option: (provided,state)=>({
+  const customStyles = {
+    control: (provided, state) => ({
       ...provided,
-      borderBottom: '1px solid pink',
-      color: state.isSelected ? 'red': 'blue',
-    
-    }
-    ),
-    control: (provided) => ({
+      
+      minHeight: '50px',
+      height: '50px',
+      boxShadow: state.isFocused ? null : null,
+    }),
+
+    valueContainer: (provided, state) => ({
       ...provided,
-      marginTop: "5%",
-    })
-  }
+      height: '50px',
+      padding: '0 6px'
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: '10px',
+    }),
+    indicatorSeparator: state => ({
+      display: 'none',
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: '50',
+    }),
+  };
+
+  
 
   const CustomOption = (props) => {
     return props.isSelected ? (
       <div >
         
         {/*<components.SingleValue {...props}>{`${props.data.label}`}</components.SingleValue>*/}
-        <label>&nbsp;&nbsp;&nbsp;{`${props.data.label1}`} <br/>&nbsp;&nbsp;&nbsp;{`${props.data.label2}`}</label>
+        <label>
+          &nbsp;&nbsp;
+          {`${props.data.label}`} 
+        </label>
         <span> 
-        &nbsp;
+          &nbsp;
         <Image
           src={image}
           sx={
-            {width: ["4.5%"],
+            {width: ["3.4%"],
           }
           }
           ></Image>
@@ -70,27 +90,43 @@ function App() {
     ):(
        < components.Option{...props}/> 
     );
+
   }
+
+  const SingleValue = ({ children, ...props }) => (
+    <div>
+    <components.SingleValue {...props}>
+      <span>{props.getValue()[0].value1} </span>
+      <br/>
+      <span>{props.getValue()[0].value2}</span>
+
+    </components.SingleValue>
+    </div>
+
+  );
 
 
   return (
     <>
-    <div className="App">
-      <Flex>
-      <Box   p={3}
-            width={[ 1/2 ]}
-            color='Green'
-            bg='primary'   
-  >
-     <h1 fontSize="12px" align="left">Welcome to the Bank</h1>
-     <Select border-color="green"
-        components={{Option: CustomOption}}
-        options={options}
+      <Flex >
+      <Box  
+            p={3}
+            width={[ 1/3]}
+            color='black'
+            bg='primary'>
+
+     <h1 >Select Bank Customer</h1>
+
+     <Select     
         onChange={handleChange}
-        classNamePrefix="lp-copy-sel" 
         placeholder='Select Customer'
         isClearable
+        isSearchable={false}
         styles={customStyles}
+        options={options}
+        //components={{SingleValue}}
+        components={{Option: CustomOption, SingleValue}}
+        
        ></Select>
       
        
@@ -100,7 +136,6 @@ function App() {
        
                 
       
-    </div>
     </>
   );
 

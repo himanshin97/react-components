@@ -22,7 +22,9 @@ function App() {
   const options = customerData.map((customer) => {
     return {
       value: customer,
-      label: `${customer.sortCode} ${customer.accountNumber} \n ${customer.accountType} ${customer.accountName}`,
+      label: `${customer.sortCode} ${customer.accountNumber} ${customer.accountType} ${customer.accountName}`,
+      chipLabel: `${customer.sortCode} ${customer.accountNumber}`,
+      customAbbreviation: `${customer.accountType} ${customer.accountName}`,
     };
   }
 
@@ -50,16 +52,20 @@ function App() {
 
   const CustomOption = (props) => {
     return props.isSelected ? (
-      <div>
+      <div {...props}>
         
-        <label>{props.label}</label>
+        {/*<components.SingleValue {...props}>{`${props.data.label}`}</components.SingleValue>*/}
+        <label>&nbsp;&nbsp;&nbsp;{`${props.data.chipLabel}`}<br/>&nbsp;&nbsp;&nbsp;{`${props.data.customAbbreviation}`}</label>
+        <span> 
+        &nbsp;
         <Image
           src={image}
           sx={
-            {width: ["3%"],
+            {width: ["6%"],
           }
           }
           ></Image>
+          </span>
       </div>
     ):(
        < components.Option{...props}/> 

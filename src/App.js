@@ -23,8 +23,8 @@ function App() {
     return {
       value: customer,
       label: `${customer.sortCode} ${customer.accountNumber} ${customer.accountType} ${customer.accountName}`,
-      chipLabel: `${customer.sortCode} ${customer.accountNumber}`,
-      customAbbreviation: `${customer.accountType} ${customer.accountName}`,
+      label1: `${customer.sortCode} ${customer.accountNumber}`,
+      label2: `${customer.accountType} ${customer.accountName}`,
     };
   }
 
@@ -55,13 +55,13 @@ function App() {
       <div {...props}>
         
         {/*<components.SingleValue {...props}>{`${props.data.label}`}</components.SingleValue>*/}
-        <label>&nbsp;&nbsp;&nbsp;{`${props.data.chipLabel}`}<br/>&nbsp;&nbsp;&nbsp;{`${props.data.customAbbreviation}`}</label>
+        <label>&nbsp;&nbsp;&nbsp;{`${props.data.label1}`} <br/>&nbsp;&nbsp;&nbsp;{`${props.data.label2}`}</label>
         <span> 
         &nbsp;
         <Image
           src={image}
           sx={
-            {width: ["6%"],
+            {width: ["4.5%"],
           }
           }
           ></Image>

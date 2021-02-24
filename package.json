@@ -15,6 +15,7 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
     "react-select": "^4.0.2",
+    "react-select-event": "^5.2.0",
     "rebass": "^4.0.7",
     "save": "^2.4.0",
     "styled-components": "^5.2.1",
@@ -45,5 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

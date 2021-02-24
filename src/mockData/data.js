@@ -1,13 +1,5 @@
 
 
-export const options = [
-    { value: 'gs kumar', label: <div>11-11-11   111111111   <br/>Savings Account - GS Kumar </div>},
-    { value: 'pk shrivastava', label: <div>22-22-22   222222222  <br/>Current Account - PK Shrivastava </div> },
-    { value: 'divya nigam', label: <div>33-33-33   333333333  <br/>Current Account - Divya Nigam </div> },
-    { value: 'yash bhagtnagar', label: <div>44-44-44   444444444  <br/>Savings Account - Yash Bhagtnagar </div> },
-    { value: 'purva jain', label: <div>55-55-55   555555555   <br/> Account - Purva Jain </div> }
-  ];
-
 export const customerData = [
     {
         sortCode: "11-11-11",
